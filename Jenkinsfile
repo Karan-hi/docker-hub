@@ -17,7 +17,7 @@ pipeline {
                 stage("build-image") {
                      steps {
                              sh 'sudo docker build -t tomcat:$BUILD_TAG .'
-                             sh 'sudo docker tag tomcat:$BUILD_TAG technetgalaxy/pipeline-java:$BUILD_TAG'
+                             sh 'sudo docker tag tomcat:$BUILD_TAG karanjangid12/docker-pipeline:$BUILD_TAG'
                              }
                 }
                 
