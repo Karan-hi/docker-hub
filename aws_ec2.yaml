@@ -1,0 +1,25 @@
+plugin: aws_ec2
+
+# Credentials should be set as environment variables for security:
+# export AWS_ACCESS_KEY_ID="your_access_key"
+# export AWS_SECRET_ACCESS_KEY="your_secret_key"
+# Do not hardcode credentials in this file
+
+regions:
+  - ap-south-1
+  - us-west-1
+
+filters:
+  instance-state-name : running
+ 
+keyed_groups:
+  - key: tags.Name
+    prefix: ""
+    separator: ""
+
+hostnames:
+  - private-ip-address
+
+compose:
+  ansible_host: private_ip_address
+
